@@ -1,7 +1,8 @@
 name: Release main
 
 on:
-  workflow_dispatch:
+  release:
+    types: [published]
 
 permissions:
   contents: write
