@@ -252,7 +252,7 @@ publish-npm-binary-package:
     set -euxo pipefail
 
     cd "$NODE_PKG_DIR_PATH"
-    npm publish --dry-run --access public --tag alpha
+    npm publish --access public --tag alpha
 
 # Publish the parent npm package
 publish-npm-root-package:
@@ -260,4 +260,4 @@ publish-npm-root-package:
     set -euxo pipefail
 
     cd "$NODE_ROOT_PKG_DIR_PATH"
-    npm publish --dry-run --access public --tag alpha
+    npm publish --access public --tag alpha
