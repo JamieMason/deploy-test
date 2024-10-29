@@ -532,7 +532,7 @@ impl<'a> Ui<'a> {
 
   /// Render the reason code as a clickable link
   fn status_code_link(&self, pascal_case: &str) -> ColoredString {
-    let base_url = "https://jamiemason.github.io/syncpack/guide/status-codes/";
+    let base_url = "https://jamiemason.github.io/deploytest/guide/status-codes/";
     let lower_case = pascal_case.to_lowercase();
     let plain_link = self.link(format!("{base_url}#{lower_case}"), pascal_case);
     format!("{plain_link}").normal()

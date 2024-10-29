@@ -44,14 +44,14 @@ fn filter_option(command: &str) -> Arg {
       r#"Only <bold>{operation}</bold> dependencies whose <bold>name</bold> matches this <bold>RegEx</bold>
 
 <bold><underline>Important:</underline></bold>
---filter only affects what syncpack will <bold>{operation}</bold>. syncpack will still
+--filter only affects what deploytest will <bold>{operation}</bold>. deploytest will still
 inspect and exit 1/0 based on every dependency in your project.
 
 <bold><underline>Examples:</underline></bold>
 <dim>An exact match for "react"</>
-<dim>$</dim> <yellow><bold>syncpack {command}</bold> --filter '^react$'</>
+<dim>$</dim> <yellow><bold>deploytest {command}</bold> --filter '^react$'</>
 <dim>Any name containing "react" anywhere within it</>
-<dim>$</dim> <yellow><bold>syncpack {command}</bold> --filter 'react'</>"#
+<dim>$</dim> <yellow><bold>deploytest {command}</bold> --filter 'react'</>"#
     ))
     .action(clap::ArgAction::Set)
     .value_parser(ValueParser::new(validate_filter))
@@ -65,11 +65,11 @@ fn log_levels_option(command: &str) -> Arg {
 
 <bold><underline>Examples:</underline></bold>
 <dim>Turn off logging completely</dim>
-<dim>$</dim> <yellow><bold>syncpack {command}</bold> --log-levels off</>
+<dim>$</dim> <yellow><bold>deploytest {command}</bold> --log-levels off</>
 <dim>Only show verbose debugging logs</dim>
-<dim>$</dim> <yellow><bold>syncpack {command}</bold> --log-levels debug</>
+<dim>$</dim> <yellow><bold>deploytest {command}</bold> --log-levels debug</>
 <dim>Show everything</dim>
-<dim>$</dim> <yellow><bold>syncpack {command}</bold> --log-levels error,warn,info,debug</>"#
+<dim>$</dim> <yellow><bold>deploytest {command}</bold> --log-levels error,warn,info,debug</>"#
     ))
     .value_delimiter(',')
     .value_parser(["off", "error", "warn", "info", "debug"])
@@ -83,7 +83,7 @@ fn no_ansi_option(command: &str) -> Arg {
       r#"Disable ANSI colored output and terminal hyperlinks
 
 <bold><underline>Examples:</underline></bold>
-<dim>$</dim> <yellow><bold>syncpack {command}</bold> --no-ansi</>"#
+<dim>$</dim> <yellow><bold>deploytest {command}</bold> --no-ansi</>"#
     ))
     .action(clap::ArgAction::SetTrue)
 }
@@ -96,9 +96,9 @@ fn only_option(command: &str) -> Arg {
 
 <bold><underline>Examples:</underline></bold>
 <dim>Only inspect version mismatches</dim>
-<dim>$</dim> <yellow><bold>syncpack {command}</bold> --only mismatches</>
+<dim>$</dim> <yellow><bold>deploytest {command}</bold> --only mismatches</>
 <dim>Only inspect formatting of package.json files</dim>
-<dim>$</dim> <yellow><bold>syncpack {command}</bold> --only formatting</>"#
+<dim>$</dim> <yellow><bold>deploytest {command}</bold> --only formatting</>"#
     ))
     .value_delimiter(',')
     .value_parser(["formatting", "mismatches"])
@@ -112,7 +112,7 @@ fn show_option(command: &str) -> Arg {
       r#"Control what information is displayed in lint output
 
 <bold><underline>Values:</underline></bold>
-<yellow>ignored</>       Show instances and dependencies which syncpack is ignoring
+<yellow>ignored</>       Show instances and dependencies which deploytest is ignoring
 <yellow>instances</>     Show every instance of every dependency
 <yellow>local-hints</>   Show a hint alongside dependencies developed in this repo
 <yellow>packages</>      Show formatting status of each package.json file
@@ -120,7 +120,7 @@ fn show_option(command: &str) -> Arg {
 
 <bold><underline>Examples:</underline></bold>
 <dim>Show highest level of detail</dim>
-<dim>$</dim> <yellow><bold>syncpack {command}</bold> --show ignored,instances,local-hints,packages,status-codes</>"#
+<dim>$</dim> <yellow><bold>deploytest {command}</bold> --show ignored,instances,local-hints,packages,status-codes</>"#
     ))
     .value_delimiter(',')
     .value_parser(["ignored", "instances", "local-hints", "packages", "status-codes"])
@@ -134,13 +134,13 @@ fn source_option(command: &str) -> Arg {
       r#"A list of quoted glob patterns for package.json files to read from
 
 <bold><underline>Examples:</underline></bold>
-<dim>$</dim> <yellow><bold>syncpack {command}</bold> --source 'package.json' --source 'apps/*/package.json'</>
+<dim>$</dim> <yellow><bold>deploytest {command}</bold> --source 'package.json' --source 'apps/*/package.json'</>
 
 <bold><underline>Resolving Packages:</underline></bold>
 Patterns are discovered in the following order, first one wins:
 
 1. <yellow>--source</> CLI options
-2. <yellow>.source</> property of your syncpack config file
+2. <yellow>.source</> property of your deploytest config file
 3. <yellow>.workspaces.packages</> property of package.json (yarn)
 4. <yellow>.workspaces</> property of package.json (npm and yarn)
 5. <yellow>.packages</> property of pnpm-workspace.yaml
@@ -154,7 +154,7 @@ Patterns are discovered in the following order, first one wins:
 fn additional_help() -> String {
   cformat!(
     r#"<bold><underline>References:</underline></bold>
-- Documentation: <blue><underline>https://jamiemason.github.io/syncpack</></>
+- Documentation: <blue><underline>https://jamiemason.github.io/deploytest</></>
 - Learn glob patterns: <blue><underline>https://github.com/isaacs/node-glob#glob-primer</></>
 - lerna.json: <blue><underline>https://github.com/lerna/lerna#lernajson</></>
 - Yarn Workspaces: <blue><underline>https://yarnpkg.com/lang/en/docs/workspaces</></>

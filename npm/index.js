@@ -8,11 +8,11 @@ const arch = process.arch;
 const [os, extension] = ["win32", "cygwin"].includes(process.platform)
   ? ["windows", ".exe"]
   : [process.platform, ""];
-const optionalDep = `syncpack-${os}-${arch}`;
-const pkgSpecifier = `${optionalDep}/bin/syncpack${extension}`;
+const optionalDep = `deploytest-${os}-${arch}`;
+const pkgSpecifier = `${optionalDep}/bin/deploytest${extension}`;
 
-cosmiconfig("syncpack")
-  .search("/Users/foldleft/Dev/syncpack/fixtures/fluid-framework")
+cosmiconfig("deploytest")
+  .search()
   .then(({ config }) => (config ? JSON.stringify(config) : "{}"))
   .catch(() => "{}")
   .then((rcfileAsJson) => ({
@@ -34,14 +34,14 @@ cosmiconfig("syncpack")
     );
   })
   .catch((err) => {
-    panic("syncpack encountered an unknown error", err);
+    panic("deploytest encountered an unknown error", err);
   });
 
 function panic(message, err) {
   console.error(
     "\x1b[31m%s\n%s\x1b[0m",
     `! ${message}`,
-    "  Please raise issue at https://github.com/JamieMason/syncpack/issues/new?template=bug_report.yaml",
+    "  Please raise issue at https://github.com/JamieMason/deploytest/issues/new?template=bug_report.yaml",
     err,
   );
   process.exit(1);

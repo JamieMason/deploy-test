@@ -118,7 +118,7 @@ run-fluid-prod:
     set -euxo pipefail
 
     cd fixtures/fluid-framework
-    ../../target/release/syncpack lint
+    ../../target/release/deploytest lint
 
 # Watch lint output during dev
 watch-fluid:
@@ -139,7 +139,7 @@ build-local:
     just --dotenv-filename .env.darwin-x64 create-npm-binary-package
     just --dotenv-filename .env.darwin-x64 create-npm-root-package
     just patch-local
-    cd npm/packages/syncpack
+    cd npm/packages/deploytest
     npm install
 
 # Modify the local package.json file to only have a mac optionalDependency
@@ -147,12 +147,12 @@ patch-local:
     #!/usr/bin/env node
     const fs = require("fs");
     const path = require("path");
-    const srcPath = path.resolve("npm/packages/syncpack/package.json");
+    const srcPath = path.resolve("npm/packages/deploytest/package.json");
     const pkg = require(srcPath);
     const nextPkg = {
         ...pkg,
         optionalDependencies: {
-            "syncpack-darwin-x64": "file:../syncpack-darwin-x64"
+            "deploytest-darwin-x64": "file:../deploytest-darwin-x64"
         }
     };
     const json = JSON.stringify(nextPkg, null, 2);
@@ -227,15 +227,15 @@ create-npm-root-package-json:
         os: undefined,
         cpu: undefined,
         bin: {
-          syncpack: "./index.js",
+          deploytest: "./index.js",
         },
         optionalDependencies: {
-          "syncpack-linux-x64": pkg.version,
-          "syncpack-linux-arm64": pkg.version,
-          "syncpack-darwin-x64": pkg.version,
-          "syncpack-darwin-arm64": pkg.version,
-          "syncpack-windows-x64": pkg.version,
-          "syncpack-windows-arm64": pkg.version,
+          "deploytest-linux-x64": pkg.version,
+          "deploytest-linux-arm64": pkg.version,
+          "deploytest-darwin-x64": pkg.version,
+          "deploytest-darwin-arm64": pkg.version,
+          "deploytest-windows-x64": pkg.version,
+          "deploytest-windows-arm64": pkg.version,
         },
     };
     const json = JSON.stringify(nextPkg, null, 2);

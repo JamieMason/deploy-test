@@ -196,7 +196,7 @@ fn get_cli_patterns(cli_options: &CliOptions) -> Option<Vec<String>> {
   }
 }
 
-/// Get source patterns from the syncpack config file
+/// Get source patterns from the deploytest config file
 fn get_rcfile_patterns(rcfile: &Rcfile) -> Option<Vec<String>> {
   if rcfile.source.is_empty() {
     None

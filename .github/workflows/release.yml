@@ -1,4 +1,4 @@
-name: Release rust/main
+name: Release main
 
 on:
   workflow_dispatch:
@@ -82,8 +82,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: syncpack-${{ matrix.build.TARGET }}
-          path: target/${{ matrix.build.TARGET }}/release/syncpack
+          name: deploytest-${{ matrix.build.TARGET }}
+          path: target/${{ matrix.build.TARGET }}/release/deploytest
 
   publish-npm-base:
     name: Publish npm package

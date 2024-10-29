@@ -1,12 +1,12 @@
-name: Verify rust/main
+name: Verify main
 
 on:
   pull_request:
     branches:
-      - rust/main
+      - main
   push:
     branches:
-      - rust/main
+      - main
 
 jobs:
   lint-and-test:

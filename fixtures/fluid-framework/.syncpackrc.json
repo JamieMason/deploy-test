@@ -6,7 +6,7 @@
   },
   "semverGroups": [
     {
-      "label": "Version compatibility workarounds should be used, or removed from syncpack.config.cjs if no longer needed.",
+      "label": "Version compatibility workarounds should be used, or removed from deploytest.config.cjs if no longer needed.",
       "dependencies": ["@oclif/core"],
       "dependencyTypes": ["pnpmOverrides"],
       "packages": ["**"],
@@ -106,7 +106,7 @@
   ],
   "versionGroups": [
     {
-      "label": "Version compatibility workarounds should be used, or removed from syncpack.config.cjs if no longer needed.",
+      "label": "Version compatibility workarounds should be used, or removed from deploytest.config.cjs if no longer needed.",
       "dependencies": [
         "react-virtualized-auto-sizer",
         "@types/react",
@@ -150,7 +150,7 @@
       "packages": ["**"]
     },
     {
-      "label": "Ignore interdependencies on other Fluid packages. This is needed because syncpack doesn't understand our >= < semver ranges",
+      "label": "Ignore interdependencies on other Fluid packages. This is needed because deploytest doesn't understand our >= < semver ranges",
       "isIgnored": true,
       "packages": [
         "@fluid-example/**",

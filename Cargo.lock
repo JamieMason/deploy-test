@@ -187,6 +187,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "deploytest"
+version = "14.0.0-alpha.0"
+dependencies = [
+ "atty",
+ "clap",
+ "color-print",
+ "colored",
+ "ctor",
+ "env_logger",
+ "glob",
+ "globset",
+ "icu",
+ "itertools",
+ "lazy_static",
+ "log",
+ "node-semver",
+ "regex",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "version-compare",
+]
+
+[[package]]
 name = "displaydoc"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -975,30 +999,6 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-ident",
-]
-
-[[package]]
-name = "syncpack"
-version = "14.0.0-alpha.0"
-dependencies = [
- "atty",
- "clap",
- "color-print",
- "colored",
- "ctor",
- "env_logger",
- "glob",
- "globset",
- "icu",
- "itertools",
- "lazy_static",
- "log",
- "node-semver",
- "regex",
- "serde",
- "serde_json",
- "serde_yaml",
- "version-compare",
 ]
 
 [[package]]

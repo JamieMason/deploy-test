@@ -22,7 +22,7 @@ pub struct Instance {
   pub actual_specifier: Specifier,
   /// The dependency type to use to read/write this instance
   pub dependency_type: DependencyType,
-  /// The version specifier which syncpack has determined this instance should
+  /// The version specifier which deploytest has determined this instance should
   /// be set to, if it was not possible to determine without user intervention,
   /// this will be a `None`.
   pub expected_specifier: RefCell<Option<Specifier>>,
@@ -69,7 +69,7 @@ impl Instance {
     }
   }
 
-  /// Record what syncpack has determined the state of this instance is and what
+  /// Record what deploytest has determined the state of this instance is and what
   /// its expected specifier should be
   fn set_state(&self, state: InstanceState, expected_specifier: &Specifier) -> &Self {
     *self.state.borrow_mut() = state;

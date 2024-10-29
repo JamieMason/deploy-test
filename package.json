@@ -1,9 +1,9 @@
 {
-  "name": "syncpack",
+  "name": "deploytest",
   "description": "Consistent dependency versions in large JavaScript Monorepos",
   "version": "14.0.0-alpha.0",
   "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
-  "bugs": "https://github.com/JamieMason/syncpack/issues",
+  "bugs": "https://github.com/JamieMason/deploytest/issues",
   "contributors": [
     "Adam Haglund (https://github.com/beeequeue)",
     "Alex Hayton (https://github.com/AlexHayton)",
@@ -36,7 +36,7 @@
     "cosmiconfig": "9.0.0",
     "typescript": "5.6.3"
   },
-  "homepage": "https://github.com/JamieMason/syncpack#readme",
+  "homepage": "https://github.com/JamieMason/deploytest#readme",
   "keywords": [
     "dependencies",
     "exact-versions",
@@ -58,5 +58,5 @@
     "yarn"
   ],
   "license": "MIT",
-  "repository": "JamieMason/syncpack"
+  "repository": "JamieMason/deploytest"
 }

@@ -1,9 +1,9 @@
-# syncpack
+# deploytest
 
 <p align="center">
-  <img src="https://jamiemason.github.io/syncpack/logo.svg" width="200" height="179" alt="">
+  <img src="https://jamiemason.github.io/deploytest/logo.svg" width="200" height="179" alt="">
   <br>Consistent dependency versions in large JavaScript Monorepos.
-  <br><a href="https://jamiemason.github.io/syncpack">https://jamiemason.github.io/syncpack</a>
+  <br><a href="https://jamiemason.github.io/deploytest">https://jamiemason.github.io/deploytest</a>
 </p>
 
 ## Rust
@@ -13,8 +13,8 @@ A work in progress implementation of Syncpack in Rust. It is not ready for publi
 ## Develop
 
 ```shell
-git clone https://github.com/JamieMason/syncpack.git -b rust/main syncpack-rust
-cd syncpack-rust
+git clone https://github.com/JamieMason/deploytest.git -b main deploytest-rust
+cd deploytest-rust
 ```
 
 ## Run (Development)
@@ -32,6 +32,6 @@ Both will check formatting and version/range mismatches by default, but can be f
 
 ```shell
 cargo build --release
-target/release/syncpack lint
-target/release/syncpack fix
+target/release/deploytest lint
+target/release/deploytest fix
 ```
