@@ -1,7 +1,7 @@
 {
   "name": "@fold_left/deploytest",
   "description": "...",
-  "version": "14.0.0-alpha.0",
+  "version": "14.0.0-alpha.1",
   "dependencies": {
     "cosmiconfig": "9.0.0",
     "typescript": "5.6.3"
