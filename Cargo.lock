@@ -187,7 +187,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "deploytest"
+name = "@fold_left/deploytest"
 version = "14.0.0-alpha.0"
 dependencies = [
  "atty",

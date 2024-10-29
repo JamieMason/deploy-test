@@ -1,5 +1,5 @@
 {
-  "name": "deploytest",
+  "name": "@fold_left/deploytest",
   "description": "...",
   "version": "14.0.0-alpha.0",
   "dependencies": {
