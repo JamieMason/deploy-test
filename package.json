@@ -1,6 +1,6 @@
 {
-  "name": "deploy-test",
-  "version": "14.0.0-alpha.34",
+  "name": "@fold_left/deploytest",
+  "version": "14.0.0-alpha.4",
   "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
   "bugs": "https://github.com/JamieMason/deploy-test/issues",
   "contributors": [
