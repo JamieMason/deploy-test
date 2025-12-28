@@ -358,13 +358,11 @@ create-npm-root-package-json:
         ...pkg,
         devDependencies: undefined,
         bin: {
-          deploy-test: "./index.cjs",
+          "deploy-test": "./index.cjs",
         },
         optionalDependencies: {
           "deploy-test-linux-x64": pkg.version,
-          "deploy-test-linux-x64-musl": pkg.version,
           "deploy-test-linux-arm64": pkg.version,
-          "deploy-test-linux-arm64-musl": pkg.version,
           "deploy-test-darwin-x64": pkg.version,
           "deploy-test-darwin-arm64": pkg.version,
           "deploy-test-windows-x64": pkg.version,
