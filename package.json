@@ -1,0 +1,82 @@
+{
+  "name": "deploy-test",
+  "version": "14.0.0-alpha.34",
+  "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
+  "bugs": "https://github.com/JamieMason/deploy-test/issues",
+  "contributors": [
+    "Adam Haglund (https://github.com/beeequeue)",
+    "Alex Hayton (https://github.com/AlexHayton)",
+    "Alex Trofimov (https://github.com/mctrafik)",
+    "Altay (https://github.com/altaywtf)",
+    "Andrew Njoo (https://github.com/adnjoo)",
+    "Angel de da Torre (https://github.com/ardelato)",
+    "Aparajita Fishman (https://github.com/aparajita)",
+    "Artur Wierzbicki (https://github.com/ArturWierzbicki)",
+    "Chase Holdren (https://github.com/chaseholdren)",
+    "Chase Tamnoon (https://github.com/chase-tamnoon)",
+    "Daniel Silva (https://github.com/dsilvasc)",
+    "Dustin McCormick (https://github.com/djmccormick)",
+    "Elchin Valiyev (https://github.com/evaliyev)",
+    "Gabriel Pereira Woitechen (https://github.com/wtchnm)",
+    "Jamie Haywood (https://github.com/jamiehaywood)",
+    "Jamie Mason (https://github.com/JamieMason)",
+    "Jody Heavener (https://github.com/jodyheavener)",
+    "Keyan Zhang (https://github.com/keyz)",
+    "Luis Vieira (https://github.com/luisvieiragmr)",
+    "Maksim Nesterenko (https://github.com/maksnester)",
+    "Marais Rossouw (https://github.com/maraisr)",
+    "Matt Sprague (https://github.com/uforic)",
+    "Max Rohde (https://github.com/mxro)",
+    "Michał Warać (https://github.com/auto200)",
+    "Mike North (https://github.com/mike-north)",
+    "Nick Saunders (https://github.com/nsaunders)",
+    "Nikolas Schröter (https://github.com/nwidynski)",
+    "Petter Sæther Moen (https://github.com/petter)",
+    "Samuel Attard (https://github.com/MarshallOfSound)",
+    "Siraj (https://github.com/Syhner)",
+    "Steve Beaugé (https://github.com/stevebeauge)",
+    "Stuart Knightley (https://github.com/Stuk)",
+    "Tom Fletcher (https://github.com/tom-fletcher)"
+  ],
+  "dependencies": {
+    "tsx": "^4.21.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.10",
+    "@release-it/conventional-changelog": "^10.0.4",
+    "auto-changelog": "^2.5.0",
+    "release-it": "^19.2.2",
+    "ts-json-schema-generator": "^2.4.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=14.17.0"
+  },
+  "funding": "https://github.com/sponsors/JamieMason",
+  "homepage": "https://github.com/JamieMason/deploy-test#readme",
+  "keywords": [
+    "dependencies",
+    "exact-versions",
+    "lerna",
+    "lernajs",
+    "monorepo",
+    "npm",
+    "nx",
+    "package-json",
+    "packages",
+    "pnpm",
+    "semver",
+    "sort-package-json",
+    "turbo",
+    "turborepo",
+    "version-linter",
+    "versions",
+    "workspaces",
+    "yarn"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamieMason/deploy-test.git"
+  }
+}

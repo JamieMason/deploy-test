@@ -1,0 +1,7 @@
+{
+  "name": "deploy-test-issue",
+  "devDependencies": {
+    "deploy-test": "alpha"
+  },
+  "packageManager": "pnpm@10.26.0"
+}

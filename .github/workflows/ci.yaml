@@ -1,0 +1,73 @@
+name: Verify v14-alpha
+
+on:
+  pull_request:
+    branches:
+      - main
+      - v14-alpha
+  push:
+    branches:
+      - main
+      - v14-alpha
+
+jobs:
+  build-matrix:
+    name: Build matrix
+    runs-on: ubuntu-latest
+    outputs:
+      build_matrix: ${{ steps.set-matrix.outputs.build_matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github/workflows/matrix.json
+          sparse-checkout-cone-mode: false
+      - id: set-matrix
+        shell: bash
+        run: |
+          if [ "$ACT" == true ]; then
+            echo "build_matrix=$( cat .github/workflows/matrix.json | jq --monochrome-output --compact-output '[.[] | select(.RUN_LOCALLY)]' )" >> $GITHUB_OUTPUT
+          else
+            echo "build_matrix=$( cat .github/workflows/matrix.json | jq --monochrome-output --compact-output )" >> $GITHUB_OUTPUT
+          fi
+
+  lint-and-test:
+    name: Lint and test (${{ matrix.build.NAME }})
+    needs: build-matrix
+    runs-on: ${{ matrix.build.OS }}
+    strategy:
+      fail-fast: true
+      matrix:
+        build: ${{ fromJson(needs.build-matrix.outputs.build_matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: "https://registry.npmjs.org"
+      - name: Install pnpm
+        run: npm install -g pnpm@latest
+      - name: Install rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.build.TARGET }}
+          components: rustfmt, clippy
+      - name: Set up cargo cache
+        uses: Swatinem/rust-cache@v2
+      - name: Install just
+        uses: extractions/setup-just@v1
+        with:
+          just-version: 1.35.0
+      - name: Check cargo
+        run: just check-cargo
+      - name: Lint formatting
+        run: just check-formatting
+      - name: Lint clippy
+        run: just check-clippy
+      - name: Cargo test
+        run: |
+          just test
+          just test-glob-matching
